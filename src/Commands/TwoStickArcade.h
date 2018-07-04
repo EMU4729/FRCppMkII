@@ -12,10 +12,9 @@
 
 class TwoStickArcade : public frc::Command {
 private:
-	Joystick *leftStick;
-	Joystick *rightStick;
+	Joystick *joystick;
 public:
-	TwoStickArcade(Joystick *leftStick, Joystick *rightStick);
+	TwoStickArcade(Joystick *joystick);
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;

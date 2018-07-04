@@ -18,21 +18,28 @@
 #include "Commands/HighSpeed.h"
 #include "Commands/LowSpeed.h"
 
+// getThrottle = rightStick y
+// getTwist = rightStick x
+
 OI::OI() {
 	// Process operator interface input here.
-	leftStick = new Joystick(0);
-	rightStick = new Joystick(1);
+	Joystick *joystick = new Joystick(0);
+	joystick->SetThrottleChannel(1);
+	joystick->SetTwistChannel(4);
+	joystick->SetYChannel(5);
 
-	auto a = new JoystickButton(leftStick, 1);
-	auto b = new JoystickButton(leftStick, 2);
-	auto x = new JoystickButton(leftStick, 3);
-	auto y = new JoystickButton(leftStick, 4);
-	auto lb = new JoystickButton(leftStick, 5);
-	auto rb = new JoystickButton(leftStick, 6);
-	auto start = new JoystickButton(leftStick, 7);
-	auto select = new JoystickButton(leftStick, 8);
-	auto l3 = new JoystickButton(leftStick, 9);
-	auto r3 = new JoystickButton(leftStick, 10);
+	defaultDrive = new TwoStickArcade(joystick);
+
+	auto a = new JoystickButton(joystick, 1);
+	auto b = new JoystickButton(joystick, 2);
+	auto x = new JoystickButton(joystick, 3);
+	auto y = new JoystickButton(joystick, 4);
+	auto lb = new JoystickButton(joystick, 5);
+	auto rb = new JoystickButton(joystick, 6);
+	auto start = new JoystickButton(joystick, 7);
+	auto select = new JoystickButton(joystick, 8);
+	auto l3 = new JoystickButton(joystick, 9);
+	auto r3 = new JoystickButton(joystick, 10);
 
 	a->WhileHeld(new WinchDown(false));
 	b->WhileHeld(new WinchDown(true));
@@ -40,8 +47,8 @@ OI::OI() {
 	y->WhileHeld(new WinchUp());
 	lb->WhileHeld(new CubeIntake());
 	rb->WhileHeld(new CubeOuttake());
-	l3->WhenPressed(new TwoStickArcade(leftStick, rightStick));
-	r3->WhenPressed(new TwoStickTank(leftStick, rightStick));
+	l3->WhenPressed(new TwoStickArcade(joystick));
+	r3->WhenPressed(new TwoStickTank(joystick));
 	start->WhenPressed(new HighSpeed());
 	select->WhenPressed(new LowSpeed());
 }

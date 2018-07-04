@@ -7,7 +7,6 @@
 
 #pragma once
 
-
 constexpr int leftFrontPort = 0;
 constexpr int rightFrontPort = 1;
 constexpr int leftBackPort = 2;

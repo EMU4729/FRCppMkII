@@ -48,7 +48,7 @@ public:
 private:
 	// Have it null by default so that if testing teleop it
 	// doesn't have undefined behavior and potentially crash.
-	frc::CommandGroup* m_autonomousCommand = nullptr;
+	frc::CommandGroup *m_autonomousCommand = nullptr;
 	ExampleCommand m_defaultAuto;
 	frc::SendableChooser<string> m_chooser;
 };

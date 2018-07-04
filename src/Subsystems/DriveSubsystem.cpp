@@ -6,10 +6,11 @@
 /*----------------------------------------------------------------------------*/
 
 #include <cmath>
+#include <iostream>
 #include "DriveSubsystem.h"
 #include "../RobotMap.h"
 
-DriveSubsystem::DriveSubsystem() : Subsystem("ExampleSubsystem"),
+DriveSubsystem::DriveSubsystem() : Subsystem("DriveSubsystem"),
 									leftFrontDrive{leftFrontPort},
 									rightFrontDrive{rightFrontPort},
 									leftBackDrive{leftBackPort},
@@ -49,9 +50,10 @@ void DriveSubsystem::tank(double left, double right) {
 }
 
 void DriveSubsystem::power(double left, double right) {
-	leftFrontDrive.SetSpeed(left*speed);
+	std::cout << getLeftEncoder() << ", " << getRightEncoder() << std::endl;
+	leftFrontDrive.SetSpeed(-left*speed);
 	rightFrontDrive.SetSpeed(right*speed);
-	leftBackDrive.SetSpeed(left*speed);
+	leftBackDrive.SetSpeed(-left*speed);
 	rightBackDrive.SetSpeed(right*speed);
 }
 

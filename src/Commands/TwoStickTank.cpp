@@ -7,8 +7,9 @@
 
 #include "TwoStickTank.h"
 #include "../Robot.h"
+#include <iostream>
 
-TwoStickTank::TwoStickTank(Joystick *leftStick, Joystick *rightStick) : leftStick{leftStick}, rightStick{rightStick} {
+TwoStickTank::TwoStickTank(Joystick *joystick) : joystick{joystick} {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::driveSubsystem);
@@ -21,7 +22,7 @@ void TwoStickTank::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TwoStickTank::Execute() {
-	Robot::driveSubsystem.tank(leftStick->GetY(), rightStick->GetY());
+	Robot::driveSubsystem.tank(joystick->GetThrottle(), joystick->GetY());
 }
 
 // Make this return true when this Command no longer needs to run execute()

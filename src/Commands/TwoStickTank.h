@@ -12,10 +12,9 @@
 
 class TwoStickTank : public frc::Command {
 private:
-	Joystick *leftStick;
-	Joystick *rightStick;
+	Joystick *joystick;
 public:
-	TwoStickTank(Joystick *leftStick, Joystick *rightStick);
+	TwoStickTank(Joystick *joystick);
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;

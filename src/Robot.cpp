@@ -11,6 +11,8 @@
 #include <SmartDashboard/SmartDashboard.h>
 #include <Commands/Auto.h>
 
+#include "Commands/TwoStickArcade.h"
+
 using frc::SendableChooser;
 
 ExampleSubsystem Robot::m_subsystem;
@@ -23,7 +25,6 @@ CubeSubsystem Robot::cubeSubsystem;
 GyroSubsystem Robot::gyroSubsystem;
 
 void Robot::RobotInit() {
-
 	m_chooser.AddDefault("Left", "l");
 	m_chooser.AddObject("Middle", "m");
 	m_chooser.AddObject("Right", "r");
@@ -82,6 +83,7 @@ void Robot::TeleopInit() {
 		m_autonomousCommand->Cancel();
 		m_autonomousCommand = nullptr;
 	}
+	m_oi.defaultDrive->Start();
 }
 
 void Robot::TeleopPeriodic() {

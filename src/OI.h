@@ -9,6 +9,7 @@
 
 #include "memory"
 #include "Joystick.h"
+#include <Commands/Command.h>
 
 class OI {
 private:
@@ -16,4 +17,5 @@ private:
 	Joystick *rightStick;
 public:
 	OI();
+	frc::Command *defaultDrive = nullptr;
 };
