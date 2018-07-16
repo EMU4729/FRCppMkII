@@ -25,12 +25,13 @@ private:
 
 	double speed;
 
-	Encoder leftEncoder;
-	Encoder rightEncoder;
-
-
 	double circumferenceOfWheels;
 	double pulsesPerRevolution;
+	double encoderMultiplier; //alex and luke cannot decide name
+
+
+	Encoder leftEncoder;
+	Encoder rightEncoder;
 
 public:
 	DriveSubsystem();

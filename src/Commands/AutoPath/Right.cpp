@@ -6,13 +6,16 @@
 /*----------------------------------------------------------------------------*/
 
 #include "Right.h"
-#include "RightRight.h"
+#include "MoveForwards.h"
+#include "MoveTurn.h"
+#include "MoveEject.h"
+#include "MoveRam.h"
 
 using AutoPath::Right;
 
 Right::Right(Direction side) : side{side}  {
 	AddSequential(new MoveForwards(3.8155));
-	if (side == Right) {
+	if (side == Direction::Right) {
 		AddSequential(new MoveTurn(90, Left));
 		AddParallel(new MoveEject(2));
 		AddSequential(new MoveRam(0.8));

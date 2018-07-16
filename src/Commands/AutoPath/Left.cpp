@@ -7,7 +7,10 @@
 
 #include <iostream>
 #include "Left.h"
-#include "LeftLeft.h"
+#include "MoveForwards.h"
+#include "MoveTurn.h"
+#include "MoveEject.h"
+#include "MoveRam.h"
 
 using AutoPath::Left;
 

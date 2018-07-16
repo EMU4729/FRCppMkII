@@ -9,7 +9,7 @@
 #include "MoveRam.h"
 #include "../../Robot.h"
 
-MoveRam::MoveRam(double d) : distance{d/2} { // TODO: Why is distance d/2
+MoveRam::MoveRam(double d) : distance{d*0.4} {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::driveSubsystem);

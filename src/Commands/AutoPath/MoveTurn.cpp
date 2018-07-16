@@ -17,7 +17,7 @@ MoveTurn::MoveTurn(double deg, Direction dir) : degrees{deg}, direction{dir} {
 	Requires(&Robot::driveSubsystem);
 
 	double distanceTurned = abs(degrees-Robot::gyroSubsystem.getGyroAngle());
-	speed = fmax(0.3, distanceTurned/degrees);
+	speed = 0;
 
 	if (direction == Direction::Left) {
 		degrees *= -1;

@@ -22,6 +22,7 @@ DriveSubsystem::DriveSubsystem() : Subsystem("DriveSubsystem"),
 
 	circumferenceOfWheels = 0.1016;
 	pulsesPerRevolution = 2048;
+	encoderMultiplier = 0.9650/3.8155;
 
 	leftEncoder.SetMaxPeriod(0.1);
 	leftEncoder.SetMinRate(10);
@@ -32,6 +33,7 @@ DriveSubsystem::DriveSubsystem() : Subsystem("DriveSubsystem"),
 	rightEncoder.SetMinRate(10);
 	rightEncoder.SetDistancePerPulse(M_PI * circumferenceOfWheels/pulsesPerRevolution);
 	rightEncoder.SetSamplesToAverage(7);
+
 }
 
 void DriveSubsystem::InitDefaultCommand() {
@@ -50,7 +52,7 @@ void DriveSubsystem::tank(double left, double right) {
 }
 
 void DriveSubsystem::power(double left, double right) {
-	std::cout << left << ", " << right << std::endl;
+//	std::cout << left << ", " << right << std::endl;
 	leftFrontDrive.SetSpeed(-left*speed);
 	rightFrontDrive.SetSpeed(right*speed);
 	leftBackDrive.SetSpeed(-left*speed);
@@ -58,11 +60,11 @@ void DriveSubsystem::power(double left, double right) {
 }
 
 double DriveSubsystem::getLeftEncoder() {
-	return leftEncoder.GetDistance();
+	return leftEncoder.GetDistance();//*encoderMultiplier;
 }
 
 double DriveSubsystem::getRightEncoder() {
-	return rightEncoder.GetDistance();
+	return rightEncoder.GetDistance();//*encoderMultiplier;
 }
 
 void DriveSubsystem::highSpeed() {

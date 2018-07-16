@@ -9,13 +9,13 @@
 #include "MoveForwards.h"
 #include "../../Robot.h"
 
-MoveForwards::MoveForwards(double d) : distance{d/2} { // I'm not sure why it is d/2 - Ben
+MoveForwards::MoveForwards(double d) : distance{d} {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::driveSubsystem);
 
 	double distanceTravelled = abs(Robot::driveSubsystem.getLeftEncoder()+Robot::driveSubsystem.getRightEncoder())/2;
-	speed = fmax(0.4, distance-distanceTravelled)/distance;
+	speed = 0;
 }
 
 // Called just before this Command runs the first time
@@ -26,7 +26,7 @@ void MoveForwards::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void MoveForwards::Execute() {
 	double distanceTravelled = abs(Robot::driveSubsystem.getLeftEncoder()+Robot::driveSubsystem.getRightEncoder())/2;
-	speed = fmax(0.4, distance-distanceTravelled)/distance;
+	speed = fmax(0.4, (distance-distanceTravelled)/distance);
 	Robot::driveSubsystem.arcade(speed, 0);
 }
 
