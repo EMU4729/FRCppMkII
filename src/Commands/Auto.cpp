@@ -5,6 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+#include <iostream>
 #include "Auto.h"
 #include "../Robot.h"
 #include "AutoPath/Left.h"
@@ -12,7 +13,7 @@
 #include "AutoPath/Right.h"
 
 Auto::Auto(string autoType) : autoType{autoType} {
-
+	std::cout << "Auto" << std::endl;
 	Robot::driveSubsystem.lowSpeed();
 	Robot::driveSubsystem.resetEncoders();
 

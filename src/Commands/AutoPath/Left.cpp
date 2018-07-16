@@ -5,14 +5,19 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+#include <iostream>
 #include "Left.h"
 #include "LeftLeft.h"
 
 using AutoPath::Left;
 
 Left::Left(Direction side) : side{side} {
-
-	AddSequential(new LeftLeft(side));
+	AddSequential(new MoveForwards(3.8155));
+	if (side == Direction::Left) {
+		AddSequential(new MoveTurn(90, Direction::Right));
+		AddParallel(new MoveEject(2));
+		AddSequential(new MoveRam(0.8));
+	}
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());

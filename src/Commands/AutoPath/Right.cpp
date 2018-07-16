@@ -11,7 +11,12 @@
 using AutoPath::Right;
 
 Right::Right(Direction side) : side{side}  {
-	AddSequential(new RightRight(side));
+	AddSequential(new MoveForwards(3.8155));
+	if (side == Right) {
+		AddSequential(new MoveTurn(90, Left));
+		AddParallel(new MoveEject(2));
+		AddSequential(new MoveRam(0.8));
+	}
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
