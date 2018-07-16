@@ -12,6 +12,7 @@
 class WinchUp : public frc::Command {
 public:
 	WinchUp();
+	WinchUp(double seconds);
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;

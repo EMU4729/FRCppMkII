@@ -14,6 +14,10 @@ WinchUp::WinchUp() {
 	Requires(&Robot::winchSubsystem);
 }
 
+WinchUp::WinchUp(double seconds) {
+	// TODO: time-based
+}
+
 // Called just before this Command runs the first time
 void WinchUp::Initialize() {
 

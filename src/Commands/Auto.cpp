@@ -26,6 +26,7 @@ Auto::Auto(string autoType) : autoType{autoType} {
 		side = Direction::Right;
 	}
 
+//	AddSequential(new )
 	if (autoType == "l") {
 		AddSequential(new AutoPath::Left(side));
 	} else if (autoType == "m") {
