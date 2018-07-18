@@ -23,23 +23,26 @@
 
 OI::OI() {
 	// Process operator interface input here.
-	Joystick *joystick = new Joystick(0);
-	joystick->SetThrottleChannel(1);
-	joystick->SetTwistChannel(4);
-	joystick->SetYChannel(5);
+	Joystick *joystick1 = new Joystick(0);
+	joystick1->SetThrottleChannel(5);
+	joystick1->SetTwistChannel(4);
 
-	defaultDrive = new TwoStickArcade(joystick);
+	Joystick *joystick2 = new Joystick(1);
+	joystick2->SetThrottleChannel(5);
+	joystick2->SetTwistChannel(4);
 
-	auto a = new JoystickButton(joystick, 1);
-	auto b = new JoystickButton(joystick, 2);
-	auto x = new JoystickButton(joystick, 3);
-	auto y = new JoystickButton(joystick, 4);
-	auto lb = new JoystickButton(joystick, 5);
-	auto rb = new JoystickButton(joystick, 6);
-	auto start = new JoystickButton(joystick, 7);
-	auto select = new JoystickButton(joystick, 8);
-	auto l3 = new JoystickButton(joystick, 9);
-	auto r3 = new JoystickButton(joystick, 10);
+	defaultDrive = new TwoStickArcade(joystick1);
+
+	auto a = new JoystickButton(joystick1, 1);
+	auto b = new JoystickButton(joystick1, 2);
+	auto x = new JoystickButton(joystick1, 3);
+	auto y = new JoystickButton(joystick1, 4);
+	auto lb = new JoystickButton(joystick1, 5);
+	auto rb = new JoystickButton(joystick1, 6);
+	auto start = new JoystickButton(joystick1, 7);
+	auto select = new JoystickButton(joystick1, 8);
+	auto l3 = new JoystickButton(joystick1, 9);
+	auto r3 = new JoystickButton(joystick1, 10);
 
 	a->WhileHeld(new WinchDown(false));
 	b->WhileHeld(new WinchDown(true));
@@ -47,8 +50,8 @@ OI::OI() {
 	y->WhileHeld(new WinchUp());
 	lb->WhileHeld(new CubeIntake());
 	rb->WhileHeld(new CubeOuttake());
-	l3->WhenPressed(new TwoStickArcade(joystick));
-	r3->WhenPressed(new TwoStickTank(joystick));
+	l3->WhenPressed(new TwoStickArcade(joystick1));
+	r3->WhenPressed(new TwoStickTank(joystick1));
 	start->WhenPressed(new HighSpeed());
 	select->WhenPressed(new LowSpeed());
 }

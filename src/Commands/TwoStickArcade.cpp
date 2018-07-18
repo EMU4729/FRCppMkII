@@ -22,7 +22,7 @@ void TwoStickArcade::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TwoStickArcade::Execute() {
-	Robot::driveSubsystem.arcade(joystick->GetThrottle(), joystick->GetTwist());
+	Robot::driveSubsystem.arcade(joystick->GetY(), joystick->GetTwist());
 }
 
 // Make this return true when this Command no longer needs to run execute()

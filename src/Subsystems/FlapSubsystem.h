@@ -20,7 +20,8 @@ private:
 public:
 	FlapSubsystem();
 	void InitDefaultCommand() override;
-	void turn();
+	void up();
+	void down();
 	void stop();
 };
 

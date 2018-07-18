@@ -12,8 +12,12 @@ FlapSubsystem::FlapSubsystem() : Subsystem("FlapsSubsystem"), flapMotor{flapMoto
 	speed = 0.45;
 }
 
-void FlapSubsystem::turn() {
+void FlapSubsystem::up() {
 	flapMotor.SetSpeed(speed);
+}
+
+void FlapSubsystem::down() {
+	flapMotor.SetSpeed(-speed);
 }
 
 void FlapSubsystem::stop() {
