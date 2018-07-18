@@ -17,14 +17,17 @@ constexpr int leftEncoderB = 1;
 constexpr int rightEncoderA = 2;
 constexpr int rightEncoderB = 3;
 
-constexpr int motorFlap = 6;
+constexpr int flapMotorPort = 6;
+
+constexpr int tiltMotorPort = 7;
 
 constexpr int ledPort = 30;
 
 constexpr int winch1Port = 11;
 constexpr int winch2Port = 12;
 
-constexpr int cubeMotorPort = 5;
+constexpr int cubeMotorLeftPort = 5;
+constexpr int cubeMotorRightPort = 6;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into

@@ -7,14 +7,20 @@
 
 #pragma once
 
-#include <Commands/Command.h>
+#include <Commands/Subsystem.h>
+#include <mindsensors.h>
+using mindsensors::CANLight;
 
-class ExampleCommand : public frc::Command {
+class LEDSubsystem : public frc::Subsystem {
+private:
+	// It's desirable that everything possible under private except
+	// for methods that implement subsystem capabilities
+	CANLight *led;
+
 public:
-	ExampleCommand();
-	void Initialize() override;
-	void Execute() override;
-	bool IsFinished() override;
-	void End() override;
-	void Interrupted() override;
+	LEDSubsystem();
+	void InitDefaultCommand() override;
+	void green();
+	void stop();
 };
+

@@ -10,15 +10,15 @@
 #include <Commands/Subsystem.h>
 #include <Talon.h>
 
-class Flaps : public frc::Subsystem {
+class FlapSubsystem : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Talon *flapMotor;
+	Talon flapMotor;
 	double speed;
 
 public:
-	Flaps();
+	FlapSubsystem();
 	void InitDefaultCommand() override;
 	void turn();
 	void stop();

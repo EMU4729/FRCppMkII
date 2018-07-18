@@ -9,15 +9,13 @@
 
 #include <Commands/Command.h>
 #include <SmartDashboard/SendableChooser.h>
+#include <Subsystems/FlapSubsystem.h>
+#include <Subsystems/LEDSubsystem.h>
 #include <TimedRobot.h>
 #include <memory>
 
-#include "Commands/ExampleCommand.h"
 #include "OI.h"
-#include "Subsystems/ExampleSubsystem.h"
 #include "Subsystems/DriveSubsystem.h"
-#include "Subsystems/Flaps.h"
-#include "Subsystems/LED.h"
 #include "Subsystems/WinchSubsystem.h"
 #include "Subsystems/CubeSubsystem.h"
 #include "Subsystems/GyroSubsystem.h"
@@ -27,11 +25,10 @@ using std::string;
 
 class Robot : public frc::TimedRobot {
 public:
-	static ExampleSubsystem m_subsystem;
 	static DriveSubsystem driveSubsystem;
 	static OI m_oi;
-	static Flaps flaps;
-	static LED led;
+	static FlapSubsystem flaps;
+	static LEDSubsystem led;
 	static WinchSubsystem winchSubsystem;
 	static CubeSubsystem cubeSubsystem;
 	static GyroSubsystem gyroSubsystem;
@@ -49,6 +46,5 @@ private:
 	// Have it null by default so that if testing teleop it
 	// doesn't have undefined behavior and potentially crash.
 	frc::CommandGroup *m_autonomousCommand = nullptr;
-	ExampleCommand m_defaultAuto;
 	frc::SendableChooser<string> m_chooser;
 };

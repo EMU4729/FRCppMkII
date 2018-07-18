@@ -5,24 +5,26 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "Flaps.h"
+#include "TiltSubsystem.h"
 #include "../RobotMap.h"
 
-Flaps::Flaps() : Subsystem("ExampleSubsystem") {
-	flapMotor = new Talon(motorFlap);
-
+TiltSubsystem::TiltSubsystem() : Subsystem("TiltSubsystem"), tiltMotor{tiltMotorPort} {
 	speed = 0.45;
 }
 
-void Flaps::turn() {
-	flapMotor->SetSpeed(speed);
+void TiltSubsystem::up() {
+	tiltMotor.SetSpeed(speed);
 }
 
-void Flaps::stop() {
-	flapMotor->SetSpeed(0);
+void TiltSubsystem::down() {
+	tiltMotor.SetSpeed(-speed);
 }
 
-void Flaps::InitDefaultCommand() {
+void TiltSubsystem::stop() {
+	tiltMotor.SetSpeed(0);
+}
+
+void TiltSubsystem::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
 }

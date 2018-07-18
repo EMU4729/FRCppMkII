@@ -15,11 +15,10 @@
 
 using frc::SendableChooser;
 
-ExampleSubsystem Robot::m_subsystem;
 OI Robot::m_oi;
 DriveSubsystem Robot::driveSubsystem;
-Flaps Robot::flaps;
-LED Robot::led;
+FlapSubsystem Robot::flaps;
+LEDSubsystem Robot::led;
 WinchSubsystem Robot::winchSubsystem;
 CubeSubsystem Robot::cubeSubsystem;
 GyroSubsystem Robot::gyroSubsystem;

@@ -16,7 +16,8 @@ class CubeSubsystem : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Talon cubeMotor;
+	Talon cubeMotorLeft;
+	Talon cubeMotorRight;
 	double speed;
 
 public:

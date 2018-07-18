@@ -8,7 +8,7 @@
 #include "WinchSubsystem.h"
 #include "../RobotMap.h"
 
-WinchSubsystem::WinchSubsystem() : Subsystem("ExampleSubsystem"),
+WinchSubsystem::WinchSubsystem() : Subsystem("WinchSubsystem"),
 									winch1{winch1Port},
 									winch2{winch2Port} {
 

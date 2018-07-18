@@ -5,14 +5,22 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "ExampleSubsystem.h"
-
+#include <Subsystems/FlapSubsystem.h>
 #include "../RobotMap.h"
 
-ExampleSubsystem::ExampleSubsystem()
-    : frc::Subsystem("ExampleSubsystem") {}
+FlapSubsystem::FlapSubsystem() : Subsystem("FlapsSubsystem"), flapMotor{flapMotorPort} {
+	speed = 0.45;
+}
 
-void ExampleSubsystem::InitDefaultCommand() {
+void FlapSubsystem::turn() {
+	flapMotor.SetSpeed(speed);
+}
+
+void FlapSubsystem::stop() {
+	flapMotor.SetSpeed(0);
+}
+
+void FlapSubsystem::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
 }

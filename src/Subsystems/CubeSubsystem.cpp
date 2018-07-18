@@ -8,7 +8,7 @@
 #include "CubeSubsystem.h"
 #include "../RobotMap.h"
 
-CubeSubsystem::CubeSubsystem() : Subsystem("ExampleSubsystem"), cubeMotor{cubeMotorPort} {
+CubeSubsystem::CubeSubsystem() : Subsystem("CubeSubsystem"), cubeMotorLeft{cubeMotorLeftPort}, cubeMotorRight{cubeMotorRightPort} {
 	speed = 0.4;
 }
 
@@ -21,13 +21,16 @@ void CubeSubsystem::InitDefaultCommand() {
 // here. Call these from Commands.
 
 void CubeSubsystem::intake() {
-	cubeMotor.SetSpeed(speed);
+	cubeMotorLeft.SetSpeed(speed);
+	cubeMotorRight.SetSpeed(speed);
 }
 
 void CubeSubsystem::outtake() {
-	cubeMotor.SetSpeed(-speed);
+	cubeMotorLeft.SetSpeed(-speed);
+	cubeMotorRight.SetSpeed(-speed);
 }
 
 void CubeSubsystem::stop() {
-	cubeMotor.SetSpeed(0);
+	cubeMotorLeft.SetSpeed(0);
+	cubeMotorRight.SetSpeed(0);
 }

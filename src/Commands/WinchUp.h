@@ -8,6 +8,7 @@
 #pragma once
 
 #include <Commands/Command.h>
+#include <Timer.h>
 
 class WinchUp : public frc::Command {
 public:
@@ -18,5 +19,8 @@ public:
 	bool IsFinished() override;
 	void End() override;
 	void Interrupted() override;
+private:
+	Timer timer;
+	double seconds;
 };
 

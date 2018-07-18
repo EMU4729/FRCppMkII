@@ -8,7 +8,7 @@
 #include "GyroSubsystem.h"
 #include "../RobotMap.h"
 
-GyroSubsystem::GyroSubsystem() : gyro{}, Subsystem("ExampleSubsystem") {
+GyroSubsystem::GyroSubsystem() : gyro{}, Subsystem("GyroSubsystem") {
 	gyro.Calibrate();
 }
 

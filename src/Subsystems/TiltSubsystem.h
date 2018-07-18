@@ -8,13 +8,20 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
+#include <Talon.h>
 
-class ExampleSubsystem : public frc::Subsystem {
-public:
-	ExampleSubsystem();
-	void InitDefaultCommand() override;
-
+class TiltSubsystem : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
+	Talon tiltMotor;
+	double speed;
+
+public:
+	TiltSubsystem();
+	void InitDefaultCommand() override;
+	void up();
+	void down();
+	void stop();
 };
+

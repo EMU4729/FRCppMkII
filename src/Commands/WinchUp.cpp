@@ -7,20 +7,23 @@
 
 #include "WinchUp.h"
 #include "../Robot.h"
+#include <Timer.h>
 
 WinchUp::WinchUp() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::winchSubsystem);
+	seconds = -1;
 }
 
-WinchUp::WinchUp(double seconds) {
-	// TODO: time-based
+WinchUp::WinchUp(double s) {
+	Requires(&Robot::winchSubsystem);
+	seconds = s;
 }
 
 // Called just before this Command runs the first time
 void WinchUp::Initialize() {
-
+	if (seconds > 0) timer.Start();
 }
 
 // Called repeatedly when this Command is scheduled to run
@@ -30,7 +33,11 @@ void WinchUp::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool WinchUp::IsFinished() {
-	return false;
+	if (seconds <= 0) {
+		return false;
+	} else {
+		return timer.HasPeriodPassed(seconds);
+	}
 }
 
 // Called once after isFinished returns true

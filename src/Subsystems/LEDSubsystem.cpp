@@ -5,22 +5,22 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "LED.h"
+#include <Subsystems/LEDSubsystem.h>
 #include "../RobotMap.h"
 
-LED::LED() : Subsystem("ExampleSubsystem") {
+LEDSubsystem::LEDSubsystem() : Subsystem("LEDSubsystem") {
 	led = new CANLight(ledPort);
 }
 
-void LED::green() {
+void LEDSubsystem::green() {
 	led->ShowRGB(0, 255, 0);
 }
 
-void LED::stop() {
+void LEDSubsystem::stop() {
 	led->ShowRGB(0, 0, 0);
 }
 
-void LED::InitDefaultCommand() {
+void LEDSubsystem::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
 	// SetDefaultCommand(new MySpecialCommand());
 }
