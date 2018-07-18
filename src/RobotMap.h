@@ -29,6 +29,12 @@ constexpr int winch2Port = 12;
 constexpr int cubeMotorLeftPort = 5;
 constexpr int cubeMotorRightPort = 6;
 
+//DOUBLE SOLENOID VARIABLES (alex made me write this)
+constexpr int forwardLeftSolenoid = 1;
+constexpr int reverseLeftSolenoid = 2;
+constexpr int forwardRightSolenoid = 3;
+constexpr int reverseRightSolenoid = 4;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
