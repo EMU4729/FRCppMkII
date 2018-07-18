@@ -7,21 +7,15 @@
 
 #pragma once
 
-#include <DoubleSolenoid.h>
-#include <Commands/Subsystem.h>
+#include <Commands/Command.h>
 
-class Pneumatics : public frc::Subsystem {
-private:
-	// It's desirable that everything possible under private except
-	// for methods that implement subsystem capabilities
-	DoubleSolenoid leftGrabber;
-	DoubleSolenoid rightGrabber;
-
+class PneumaticsGrab : public frc::Command {
 public:
-	Pneumatics();
-	void InitDefaultCommand() override;
-	void Grab();
-	void Release();
-	void Off();
+	PneumaticsGrab();
+	void Initialize() override;
+	void Execute() override;
+	bool IsFinished() override;
+	void End() override;
+	void Interrupted() override;
 };
 

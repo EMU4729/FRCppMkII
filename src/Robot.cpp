@@ -22,6 +22,7 @@ LEDSubsystem Robot::led;
 WinchSubsystem Robot::winchSubsystem;
 CubeSubsystem Robot::cubeSubsystem;
 GyroSubsystem Robot::gyroSubsystem;
+Pneumatics Robot::pneumaticSubsystem;
 
 void Robot::RobotInit() {
 	m_chooser.AddDefault("Left", "l");

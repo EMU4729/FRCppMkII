@@ -19,6 +19,7 @@
 #include "Subsystems/WinchSubsystem.h"
 #include "Subsystems/CubeSubsystem.h"
 #include "Subsystems/GyroSubsystem.h"
+#include "Subsystems/Pneumatics.h"
 #include "Joystick.h"
 
 using std::string;
@@ -32,6 +33,7 @@ public:
 	static WinchSubsystem winchSubsystem;
 	static CubeSubsystem cubeSubsystem;
 	static GyroSubsystem gyroSubsystem;
+	static Pneumatics pneumaticSubsystem;
 
 	void RobotInit() override;
 	void DisabledInit() override;

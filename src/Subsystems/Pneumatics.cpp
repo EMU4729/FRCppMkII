@@ -4,7 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.
  *
- * Do you know who I am?
+ * "Do you know who I am?"
  *                     - INSERT_YOUR_NAME_HERE
 /*----------------------------------------------------------------------------*/
 
@@ -12,9 +12,7 @@
 #include "../RobotMap.h"
 
 
-Pneumatics::Pneumatics() : Subsystem("PneumaticSubsystem") {
-	leftGrabber = new DoubleSolenoid(forwardLeftSolenoid,reverseLeftSolenoid);
-	rightGrabber = new DoubleSolenoid(forwardRightSolenoid,reverseRightSolenoid);
+Pneumatics::Pneumatics() : Subsystem("pneumaticSubsystem"), leftGrabber{forwardLeftSolenoid, reverseLeftSolenoid}, rightGrabber{forwardRightSolenoid,reverseRightSolenoid} {
 
 }
 
@@ -25,21 +23,21 @@ void Pneumatics::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void Pneumatics::Grab(DoubleSolenoid left, DoubleSolenoid right) { //button x
+void Pneumatics::Grab() { //button x
 	// when the thing grabs the cube #excellantDescription
-	left.Set(frc::DoubleSolenoid::Value::kForward);
-	right.Set(frc::DoubleSolenoid::Value::kForward);
+	leftGrabber.Set(frc::DoubleSolenoid::Value::kForward);
+	rightGrabber.Set(frc::DoubleSolenoid::Value::kForward);
 
 }
 
-void Pneumatics::Release(DoubleSolenoid left, DoubleSolenoid right) { //button b
+void Pneumatics::Release() { //button b
 	// when the thing release the cube
-	left.Set(frc::DoubleSolenoid::Value::kReverse);
-	right.Set(frc::DoubleSolenoid::Value::kReverse);
+	leftGrabber.Set(frc::DoubleSolenoid::Value::kReverse);
+	rightGrabber.Set(frc::DoubleSolenoid::Value::kReverse);
 }
 
-void Pneumatics::Off(DoubleSolenoid left, DoubleSolenoid right) { //button y
+void Pneumatics::Off() { //button y
 	//solenoid off
-	left.Set(frc::DoubleSolenoid::Value::kOff);
-	right.Set(frc::DoubleSolenoid::Value::kOff);
+	leftGrabber.Set(frc::DoubleSolenoid::Value::kOff);
+	rightGrabber.Set(frc::DoubleSolenoid::Value::kOff);
 }
