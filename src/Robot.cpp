@@ -23,6 +23,7 @@ WinchSubsystem Robot::winchSubsystem;
 CubeSubsystem Robot::cubeSubsystem;
 GyroSubsystem Robot::gyroSubsystem;
 Pneumatics Robot::pneumaticSubsystem;
+TiltSubsystem Robot::tiltSubsystem;
 
 void Robot::RobotInit() {
 	m_chooser.AddDefault("Left", "l");

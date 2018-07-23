@@ -20,6 +20,7 @@
 #include "Subsystems/CubeSubsystem.h"
 #include "Subsystems/GyroSubsystem.h"
 #include "Subsystems/Pneumatics.h"
+#include "Subsystems/TiltSubsystem.h"
 #include "Joystick.h"
 
 using std::string;
@@ -34,6 +35,7 @@ public:
 	static CubeSubsystem cubeSubsystem;
 	static GyroSubsystem gyroSubsystem;
 	static Pneumatics pneumaticSubsystem;
+	static TiltSubsystem tiltSubsystem;
 
 	void RobotInit() override;
 	void DisabledInit() override;

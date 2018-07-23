@@ -7,22 +7,18 @@
 
 #pragma once
 
-#include <Commands/Subsystem.h>
-#include <Talon.h>
+#include <Commands/Command.h>
+#include <Joystick.h>
 
-class TiltSubsystem : public frc::Subsystem {
+class TiltControl : public frc::Command {
 private:
-	// It's desirable that everything possible under private except
-	// for methods that implement subsystem capabilities
-	Talon tiltMotor;
-	double speed;
-
+	Joystick *joystick;
 public:
-	TiltSubsystem();
-	void InitDefaultCommand() override;
-	void up();
-	void down();
-	void stop();
-	void move(double power);
+	TiltControl(Joystick *joystick);
+	void Initialize() override;
+	void Execute() override;
+	bool IsFinished() override;
+	void End() override;
+	void Interrupted() override;
 };
 

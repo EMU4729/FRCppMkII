@@ -20,6 +20,10 @@ void TiltSubsystem::down() {
 	tiltMotor.SetSpeed(-speed);
 }
 
+void TiltSubsystem::move(double power) {
+	tiltMotor.SetSpeed(speed*power);
+}
+
 void TiltSubsystem::stop() {
 	tiltMotor.SetSpeed(0);
 }
