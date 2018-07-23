@@ -33,25 +33,50 @@ OI::OI() {
 
 	defaultDrive = new TwoStickArcade(joystick1);
 
-	auto a = new JoystickButton(joystick1, 1);
-	auto b = new JoystickButton(joystick1, 2);
-	auto x = new JoystickButton(joystick1, 3);
-	auto y = new JoystickButton(joystick1, 4);
-	auto lb = new JoystickButton(joystick1, 5);
-	auto rb = new JoystickButton(joystick1, 6);
-	auto start = new JoystickButton(joystick1, 7);
-	auto select = new JoystickButton(joystick1, 8);
-	auto l3 = new JoystickButton(joystick1, 9);
-	auto r3 = new JoystickButton(joystick1, 10);
+	auto a1 = new JoystickButton(joystick1, 1);
+	auto b1 = new JoystickButton(joystick1, 2);
+	auto x1 = new JoystickButton(joystick1, 3);
+	auto y1 = new JoystickButton(joystick1, 4);
+	auto lb1 = new JoystickButton(joystick1, 5);
+	auto rb1 = new JoystickButton(joystick1, 6);
+	auto start1 = new JoystickButton(joystick1, 7);
+	auto select1 = new JoystickButton(joystick1, 8);
+	auto l31 = new JoystickButton(joystick1, 9);
+	auto r31 = new JoystickButton(joystick1, 10);
 
-	a->WhileHeld(new WinchDown(false));
-	b->WhileHeld(new WinchDown(true));
-	x->WhileHeld(new OpenFlaps());
-	y->WhileHeld(new WinchUp());
-	lb->WhileHeld(new CubeIntake());
-	rb->WhileHeld(new CubeOuttake());
-	l3->WhenPressed(new TwoStickArcade(joystick1));
-	r3->WhenPressed(new TwoStickTank(joystick1));
-	start->WhenPressed(new HighSpeed());
-	select->WhenPressed(new LowSpeed());
+	auto a2 = new JoystickButton(joystick2, 1);
+	auto b2 = new JoystickButton(joystick2, 2);
+	auto x2 = new JoystickButton(joystick2, 3);
+	auto y2 = new JoystickButton(joystick2, 4);
+	auto lb2 = new JoystickButton(joystick2, 5);
+	auto rb2 = new JoystickButton(joystick2, 6);
+	auto start2 = new JoystickButton(joystick2, 7);
+	auto select2 = new JoystickButton(joystick2, 8);
+	auto l32 = new JoystickButton(joystick2, 9);
+	auto r32 = new JoystickButton(joystick2, 10);
+
+	y1->WhileHeld(new FlapUp());
+	b1->WhileHeld(new FlapDown());
+	l31->WhenPressed(new TwoStickArcade(joystick1));
+	r31->WhenPressed(new TwoStickTank(joystick1));
+	start1->WhenPressed(new HighSpeed());
+	select1->WhenPressed(new LowSpeed());
+
+	y2->WhileHeld(new CubeOuttake());
+	b2->WhileHeld(new CubeIntake());
+	x2->WhileHeld(new PneumaticsGrab());
+	a2->WhileHeld(new PneumaticsRelease());
+	rb2->WhileHeld(new WinchPower()); // TODO
 }
+
+// // Old code
+// a1->WhileHeld(new WinchDown(false));
+// b1->WhileHeld(new WinchDown(true));
+// x1->WhileHeld(new OpenFlaps());
+// y1->WhileHeld(new WinchUp());
+// lb1->WhileHeld(new CubeIntake());
+// rb1->WhileHeld(new CubeOuttake());
+// l31->WhenPressed(new TwoStickArcade(joystick1));
+// r31->WhenPressed(new TwoStickTank(joystick1));
+// start1->WhenPressed(new HighSpeed());
+// select1->WhenPressed(new LowSpeed());
