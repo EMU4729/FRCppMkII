@@ -7,28 +7,18 @@
 
 #pragma once
 
-#include <Commands/Subsystem.h>
-#include <Talon.h>
+#include <Commands/Command.h>
+#include <Joystick.h>
 
-using frc::Talon;
-
-class WinchSubsystem : public frc::Subsystem {
+class WinchControl : public frc::Command {
 private:
-	// It's desirable that everything possible under private except
-	// for methods that implement subsystem capabilities
-	Talon winch1;
-	Talon winch2;
-
-	double normalSpeed;
-	double carrySpeed;
-	double upSpeed;
+	Joystick *joystick;
 public:
-	WinchSubsystem();
-	void InitDefaultCommand() override;
-	void up();
-	void down();
-	void stop();
-	void move(double power);
-	bool highPower;
+	WinchControl(Joystick *joystick);
+	void Initialize() override;
+	void Execute() override;
+	bool IsFinished() override;
+	void End() override;
+	void Interrupted() override;
 };
 

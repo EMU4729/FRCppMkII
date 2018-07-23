@@ -11,7 +11,7 @@
 FlapUp::FlapUp() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
-	Requires(&Robot::flaps);
+	Requires(&Robot::flapsSubsystem);
 }
 
 // Called just before this Command runs the first time
@@ -21,7 +21,7 @@ void FlapUp::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void FlapUp::Execute() {
-	Robot::flaps.up();
+	Robot::flapsSubsystem.up();
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -17,12 +17,12 @@ using frc::SendableChooser;
 
 OI Robot::m_oi;
 DriveSubsystem Robot::driveSubsystem;
-FlapSubsystem Robot::flaps;
-LEDSubsystem Robot::led;
+FlapSubsystem Robot::flapsSubsystem;
+LEDSubsystem Robot::ledSubsystem;
 WinchSubsystem Robot::winchSubsystem;
 CubeSubsystem Robot::cubeSubsystem;
 GyroSubsystem Robot::gyroSubsystem;
-Pneumatics Robot::pneumaticSubsystem;
+PneumaticsSubsystem Robot::pneumaticSubsystem;
 TiltSubsystem Robot::tiltSubsystem;
 
 void Robot::RobotInit() {

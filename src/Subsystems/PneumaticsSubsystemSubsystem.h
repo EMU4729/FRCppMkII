@@ -10,7 +10,7 @@
 #include <DoubleSolenoid.h>
 #include <Commands/Subsystem.h>
 
-class Pneumatics : public frc::Subsystem {
+class PneumaticsSubsystem : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
@@ -18,7 +18,7 @@ private:
 	DoubleSolenoid rightGrabber;
 
 public:
-	Pneumatics();
+	PneumaticsSubsystem();
 	void InitDefaultCommand() override;
 	void Grab();
 	void Release();

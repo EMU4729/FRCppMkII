@@ -11,6 +11,7 @@
 #include <SmartDashboard/SendableChooser.h>
 #include <Subsystems/FlapSubsystem.h>
 #include <Subsystems/LEDSubsystem.h>
+#include <Subsystems/PneumaticsSubsystemSubsystem.h>
 #include <TimedRobot.h>
 #include <memory>
 
@@ -19,7 +20,6 @@
 #include "Subsystems/WinchSubsystem.h"
 #include "Subsystems/CubeSubsystem.h"
 #include "Subsystems/GyroSubsystem.h"
-#include "Subsystems/Pneumatics.h"
 #include "Subsystems/TiltSubsystem.h"
 #include "Joystick.h"
 
@@ -29,12 +29,12 @@ class Robot : public frc::TimedRobot {
 public:
 	static DriveSubsystem driveSubsystem;
 	static OI m_oi;
-	static FlapSubsystem flaps;
-	static LEDSubsystem led;
+	static FlapSubsystem flapsSubsystem;
+	static LEDSubsystem ledSubsystem;
 	static WinchSubsystem winchSubsystem;
 	static CubeSubsystem cubeSubsystem;
 	static GyroSubsystem gyroSubsystem;
-	static Pneumatics pneumaticSubsystem;
+	static PneumaticsSubsystem pneumaticSubsystem;
 	static TiltSubsystem tiltSubsystem;
 
 	void RobotInit() override;

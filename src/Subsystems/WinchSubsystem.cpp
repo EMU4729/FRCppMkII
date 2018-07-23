@@ -43,5 +43,10 @@ void WinchSubsystem::stop() {
 	winch2.SetSpeed(0);
 }
 
+void WinchSubsystem::move(double power) {
+	winch1.SetSpeed(power);
+	winch2.SetSpeed(power);
+}
+
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

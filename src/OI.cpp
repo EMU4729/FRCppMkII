@@ -12,11 +12,17 @@
 #include "Commands/TwoStickTank.h"
 #include "Commands/WinchUp.h"
 #include "Commands/WinchDown.h"
-#include "Commands/OpenFlaps.h"
 #include "Commands/CubeIntake.h"
 #include "Commands/CubeOuttake.h"
 #include "Commands/HighSpeed.h"
 #include "Commands/LowSpeed.h"
+#include "Commands/FlapUp.h"
+#include "Commands/FlapDown.h"
+#include "Commands/WinchPower.h"
+#include "Commands/PneumaticsGrab.h"
+#include "Commands/PneumaticsRelease.h"
+#include "Commands/WinchControl.h"
+#include "Commands/TiltControl.h"
 
 // getThrottle = rightStick y
 // getTwist = rightStick x
@@ -30,8 +36,6 @@ OI::OI() {
 	Joystick *joystick2 = new Joystick(1);
 	joystick2->SetThrottleChannel(5);
 	joystick2->SetTwistChannel(4);
-
-	defaultDrive = new TwoStickArcade(joystick1);
 
 	auto a1 = new JoystickButton(joystick1, 1);
 	auto b1 = new JoystickButton(joystick1, 2);
@@ -55,6 +59,7 @@ OI::OI() {
 	auto l32 = new JoystickButton(joystick2, 9);
 	auto r32 = new JoystickButton(joystick2, 10);
 
+	defaultDrive = new TwoStickArcade(joystick1);
 	y1->WhileHeld(new FlapUp());
 	b1->WhileHeld(new FlapDown());
 	l31->WhenPressed(new TwoStickArcade(joystick1));
@@ -62,11 +67,13 @@ OI::OI() {
 	start1->WhenPressed(new HighSpeed());
 	select1->WhenPressed(new LowSpeed());
 
+	new WinchControl(joystick2);
+	new TiltControl(joystick2);
 	y2->WhileHeld(new CubeOuttake());
 	b2->WhileHeld(new CubeIntake());
 	x2->WhileHeld(new PneumaticsGrab());
 	a2->WhileHeld(new PneumaticsRelease());
-	rb2->WhileHeld(new WinchPower()); // TODO
+//	rb2->WhileHeld(new WinchPower());
 }
 
 // // Old code
