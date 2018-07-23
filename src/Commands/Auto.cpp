@@ -15,7 +15,6 @@
 #include "PneumaticsGrab.h"
 
 Auto::Auto(string autoType) : autoType{autoType} {
-	std::cout << "Auto" << std::endl;
 	Robot::driveSubsystem.lowSpeed();
 	Robot::driveSubsystem.resetEncoders();
 
