@@ -12,6 +12,7 @@
 #include "AutoPath/Middle.h"
 #include "AutoPath/Right.h"
 #include "WinchUp.h"
+#include "PneumaticsGrab.h"
 
 Auto::Auto(string autoType) : autoType{autoType} {
 	std::cout << "Auto" << std::endl;
@@ -27,6 +28,7 @@ Auto::Auto(string autoType) : autoType{autoType} {
 		side = Direction::Right;
 	}
 
+	AddSequential(new PneumaticsGrab());
 	AddSequential(new WinchUp(1)); // TODO: find better value
 	if (autoType == "l") {
 		AddSequential(new AutoPath::Left(side));
