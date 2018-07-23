@@ -5,37 +5,37 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "WinchDown.h"
+#include "WinchPower.h"
 #include "../Robot.h"
 
-WinchDown::WinchDown() {
+WinchPower::WinchPower() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::winchSubsystem);
 }
 
 // Called just before this Command runs the first time
-void WinchDown::Initialize() {
-
+void WinchPower::Initialize() {
+	Robot::winchSubsystem.highPower = true;
 }
 
 // Called repeatedly when this Command is scheduled to run
-void WinchDown::Execute() {
-	Robot::winchSubsystem.down();
+void WinchPower::Execute() {
+
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool WinchDown::IsFinished() {
+bool WinchPower::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void WinchDown::End() {
-	Robot::winchSubsystem.stop();
+void WinchPower::End() {
+	Robot::winchSubsystem.highPower = false;
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void WinchDown::Interrupted() {
+void WinchPower::Interrupted() {
 	End();
 }

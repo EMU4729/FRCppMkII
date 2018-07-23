@@ -9,10 +9,9 @@
 
 #include <Commands/Command.h>
 
-class WinchDown : public frc::Command {
-private:
+class FlapUp : public frc::Command {
 public:
-	WinchDown();
+	FlapUp();
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;

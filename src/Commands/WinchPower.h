@@ -9,9 +9,9 @@
 
 #include <Commands/Command.h>
 
-class OpenFlaps : public frc::Command {
+class WinchPower : public frc::Command {
 public:
-	OpenFlaps();
+	WinchPower();
 	void Initialize() override;
 	void Execute() override;
 	bool IsFinished() override;

@@ -15,6 +15,7 @@ WinchSubsystem::WinchSubsystem() : Subsystem("WinchSubsystem"),
 	normalSpeed = 0.7;
 	carrySpeed = 1;
 	upSpeed = 0.5;
+	highPower = false;
 }
 
 void WinchSubsystem::InitDefaultCommand() {
@@ -27,8 +28,8 @@ void WinchSubsystem::up() {
 	winch2.SetSpeed(-upSpeed);
 }
 
-void WinchSubsystem::down(bool carry) {
-	if (carry) {
+void WinchSubsystem::down() {
+	if (highPower) {
 		winch1.SetSpeed(carrySpeed);
 		winch2.SetSpeed(carrySpeed);
 	} else {

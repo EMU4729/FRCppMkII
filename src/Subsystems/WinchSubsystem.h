@@ -26,7 +26,8 @@ public:
 	WinchSubsystem();
 	void InitDefaultCommand() override;
 	void up();
-	void down(bool carry);
+	void down();
 	void stop();
+	bool highPower;
 };
 

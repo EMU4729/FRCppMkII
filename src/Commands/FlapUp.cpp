@@ -5,39 +5,37 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "OpenFlaps.h"
+#include "FlapUp.h"
 #include "../Robot.h"
 
-OpenFlaps::OpenFlaps() {
+FlapUp::FlapUp() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::flaps);
-	Requires(&Robot::led);
 }
 
 // Called just before this Command runs the first time
-void OpenFlaps::Initialize() {
+void FlapUp::Initialize() {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void OpenFlaps::Execute() {
-	Robot::flaps.turn();
+void FlapUp::Execute() {
+	Robot::flaps.up();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool OpenFlaps::IsFinished() {
+bool FlapUp::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void OpenFlaps::End() {
-	Robot::flaps.stop();
-	Robot::led.green();
+void FlapUp::End() {
+
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void OpenFlaps::Interrupted() {
+void FlapUp::Interrupted() {
 	End();
 }

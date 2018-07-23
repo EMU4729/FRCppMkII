@@ -5,37 +5,37 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "WinchDown.h"
+#include "FlapDown.h"
 #include "../Robot.h"
 
-WinchDown::WinchDown() {
+FlapDown::FlapDown() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
-	Requires(&Robot::winchSubsystem);
+	Requires(&Robot::flaps);
 }
 
 // Called just before this Command runs the first time
-void WinchDown::Initialize() {
+void FlapDown::Initialize() {
 
 }
 
 // Called repeatedly when this Command is scheduled to run
-void WinchDown::Execute() {
-	Robot::winchSubsystem.down();
+void FlapDown::Execute() {
+	Robot::flaps.down();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool WinchDown::IsFinished() {
+bool FlapDown::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void WinchDown::End() {
-	Robot::winchSubsystem.stop();
+void FlapDown::End() {
+
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void WinchDown::Interrupted() {
+void FlapDown::Interrupted() {
 	End();
 }
