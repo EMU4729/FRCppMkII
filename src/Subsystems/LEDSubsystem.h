@@ -9,6 +9,8 @@
 
 #include <Commands/Subsystem.h>
 #include <mindsensors.h>
+#include <DriverStation.h>
+#include <cmath>
 using mindsensors::CANLight;
 
 class LEDSubsystem : public frc::Subsystem {
@@ -17,10 +19,14 @@ private:
 	// for methods that implement subsystem capabilities
 	CANLight *led;
 
+	DriverStation::Alliance alliance; //no luke
+
 public:
 	LEDSubsystem();
 	void InitDefaultCommand() override;
-	void green();
+	void tank(double left, double right);
+	void arcade(double forwards);
+	void flash();
 	void stop();
 };
 

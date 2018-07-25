@@ -9,6 +9,7 @@
 
 #include <Commands/Command.h>
 #include <Joystick.h>
+#include <cmath>
 
 class TwoStickArcade : public frc::Command {
 private:

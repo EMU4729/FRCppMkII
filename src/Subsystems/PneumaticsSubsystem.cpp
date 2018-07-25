@@ -4,8 +4,6 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.
  *
- * "Do you know who I am?"
- *                     - INSERT_YOUR_NAME_HERE
 /*----------------------------------------------------------------------------*/
 
 #include <Subsystems/PneumaticsSubsystem.h>
