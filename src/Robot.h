@@ -11,7 +11,7 @@
 #include <SmartDashboard/SendableChooser.h>
 #include <Subsystems/FlapSubsystem.h>
 #include <Subsystems/LEDSubsystem.h>
-#include <Subsystems/PneumaticsSubsystemSubsystem.h>
+#include <Subsystems/PneumaticsSubsystem.h>
 #include <TimedRobot.h>
 #include <memory>
 

@@ -8,7 +8,7 @@
  *                     - INSERT_YOUR_NAME_HERE
 /*----------------------------------------------------------------------------*/
 
-#include <Subsystems/PneumaticsSubsystemSubsystem.h>
+#include <Subsystems/PneumaticsSubsystem.h>
 #include "../RobotMap.h"
 
 
