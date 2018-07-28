@@ -24,7 +24,7 @@ void TwoStickArcade::Initialize() {
 void TwoStickArcade::Execute() {
 	Robot::driveSubsystem.arcade(joystick->GetY(), joystick->GetTwist());
 
-	Robot::ledSubsystem.arcade(fmin(abs(joystick->GetY()) + abs(joystick->GetTwist()), 1));
+	//Robot::ledSubsystem.arcade(fmin(abs(joystick->GetY()) + abs(joystick->GetTwist()), 1));
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -40,5 +40,5 @@ void TwoStickArcade::End() {
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void TwoStickArcade::Interrupted() {
-
+	printf("talon 4 interrupted\n");
 }

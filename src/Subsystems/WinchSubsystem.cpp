@@ -24,28 +24,28 @@ void WinchSubsystem::InitDefaultCommand() {
 }
 
 void WinchSubsystem::up() {
-	winch1.SetSpeed(-upSpeed);
-	winch2.SetSpeed(-upSpeed);
+	winch1.Set(-upSpeed);
+	winch2.Set(-upSpeed);
 }
 
 void WinchSubsystem::down() {
 	if (highPower) {
-		winch1.SetSpeed(carrySpeed);
-		winch2.SetSpeed(carrySpeed);
+		winch1.Set(carrySpeed);
+		winch2.Set(carrySpeed);
 	} else {
-		winch1.SetSpeed(normalSpeed);
-		winch2.SetSpeed(normalSpeed);
+		winch1.Set(normalSpeed);
+		winch2.Set(normalSpeed);
 	}
 }
 
 void WinchSubsystem::stop() {
-	winch1.SetSpeed(0);
-	winch2.SetSpeed(0);
+	winch1.Set(0);
+	winch2.Set(0);
 }
 
 void WinchSubsystem::move(double power) {
-	winch1.SetSpeed(power);
-	winch2.SetSpeed(power);
+	winch1.Set(power);
+	winch2.Set(power);
 }
 
 // Put methods for controlling this subsystem

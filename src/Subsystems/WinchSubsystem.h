@@ -8,16 +8,16 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
-#include <Talon.h>
+#include <ctre/Phoenix.h>
 
-using frc::Talon;
+using ctre::phoenix::motorcontrol::can::WPI_TalonSRX;
 
 class WinchSubsystem : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Talon winch1;
-	Talon winch2;
+	WPI_TalonSRX winch1;
+	WPI_TalonSRX winch2;
 
 	double normalSpeed;
 	double carrySpeed;

@@ -13,15 +13,15 @@ FlapSubsystem::FlapSubsystem() : Subsystem("FlapsSubsystem"), flapMotor{flapMoto
 }
 
 void FlapSubsystem::up() {
-	flapMotor.SetSpeed(speed);
+	flapMotor.Set(speed);
 }
 
 void FlapSubsystem::down() {
-	flapMotor.SetSpeed(-speed);
+	flapMotor.Set(-speed);
 }
 
 void FlapSubsystem::stop() {
-	flapMotor.SetSpeed(0);
+	flapMotor.Set(0);
 }
 
 void FlapSubsystem::InitDefaultCommand() {

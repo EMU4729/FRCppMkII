@@ -13,19 +13,19 @@ TiltSubsystem::TiltSubsystem() : Subsystem("TiltSubsystem"), tiltMotor{tiltMotor
 }
 
 void TiltSubsystem::up() {
-	tiltMotor.SetSpeed(speed);
+	tiltMotor.Set(speed);
 }
 
 void TiltSubsystem::down() {
-	tiltMotor.SetSpeed(-speed);
+	tiltMotor.Set(-speed);
 }
 
 void TiltSubsystem::move(double power) {
-	tiltMotor.SetSpeed(speed*power);
+	tiltMotor.Set(speed*power);
 }
 
 void TiltSubsystem::stop() {
-	tiltMotor.SetSpeed(0);
+	tiltMotor.Set(0);
 }
 
 void TiltSubsystem::InitDefaultCommand() {

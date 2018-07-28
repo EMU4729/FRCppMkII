@@ -73,6 +73,8 @@ OI::OI() {
 	b2->WhileHeld(new CubeIntake());
 	x2->WhileHeld(new PneumaticsGrab());
 	a2->WhileHeld(new PneumaticsRelease());
+	lb2->WhileHeld(new WinchDown());
+	rb2->WhileHeld(new WinchUp());
 //	rb2->WhileHeld(new WinchPower());
 }
 

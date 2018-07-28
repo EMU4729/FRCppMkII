@@ -21,16 +21,16 @@ void CubeSubsystem::InitDefaultCommand() {
 // here. Call these from Commands.
 
 void CubeSubsystem::intake() {
-	cubeMotorLeft.SetSpeed(speed);
-	cubeMotorRight.SetSpeed(speed);
+	cubeMotorLeft.Set(speed);
+	cubeMotorRight.Set(-speed);
 }
 
 void CubeSubsystem::outtake() {
-	cubeMotorLeft.SetSpeed(-speed);
-	cubeMotorRight.SetSpeed(-speed);
+	cubeMotorLeft.Set(-speed);
+	cubeMotorRight.Set(speed);
 }
 
 void CubeSubsystem::stop() {
-	cubeMotorLeft.SetSpeed(0);
-	cubeMotorRight.SetSpeed(0);
+	cubeMotorLeft.Set(0);
+	cubeMotorRight.Set(0);
 }

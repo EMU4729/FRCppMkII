@@ -7,33 +7,32 @@
 
 #pragma once
 
-constexpr int leftFrontPort = 0;
-constexpr int rightFrontPort = 1;
-constexpr int leftBackPort = 2;
-constexpr int rightBackPort = 3;
+constexpr int leftFrontPort = 4;
+constexpr int rightFrontPort = 12;
+constexpr int leftBackPort = 3;
+constexpr int rightBackPort = 11;
 
 constexpr int leftEncoderA = 0;
 constexpr int leftEncoderB = 1;
 constexpr int rightEncoderA = 2;
 constexpr int rightEncoderB = 3;
 
-constexpr int flapMotorPort = 6;
+constexpr int flapMotorPort = 0;
 
 constexpr int tiltMotorPort = 7;
 
 constexpr int ledPort = 30;
 
-constexpr int winch1Port = 11;
-constexpr int winch2Port = 12;
+constexpr int winch1Port = 5;
+constexpr int winch2Port = 6;
 
-constexpr int cubeMotorLeftPort = 5;
-constexpr int cubeMotorRightPort = 6;
+constexpr int cubeMotorLeftPort = 1;
+constexpr int cubeMotorRightPort = 2;
 
-//DOUBLE SOLENOID VARIABLES (alex made me write this)
-constexpr int forwardLeftSolenoid = 1;
-constexpr int reverseLeftSolenoid = 2;
-constexpr int forwardRightSolenoid = 3;
-constexpr int reverseRightSolenoid = 4;
+constexpr int forwardLeftSolenoid = 0;
+constexpr int reverseLeftSolenoid = 1;
+constexpr int forwardRightSolenoid = 2;
+constexpr int reverseRightSolenoid = 3;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into

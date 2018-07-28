@@ -10,7 +10,7 @@
 #include <Commands/Command.h>
 #include <SmartDashboard/SendableChooser.h>
 #include <Subsystems/FlapSubsystem.h>
-#include <Subsystems/LEDSubsystem.h>
+//#include <Subsystems/LEDSubsystem.h>
 #include <Subsystems/PneumaticsSubsystem.h>
 #include <TimedRobot.h>
 #include <memory>
@@ -30,7 +30,7 @@ public:
 	static DriveSubsystem driveSubsystem;
 	static OI m_oi;
 	static FlapSubsystem flapsSubsystem;
-	static LEDSubsystem ledSubsystem;
+	//static LEDSubsystem ledSubsystem;
 	static WinchSubsystem winchSubsystem;
 	static CubeSubsystem cubeSubsystem;
 	static GyroSubsystem gyroSubsystem;

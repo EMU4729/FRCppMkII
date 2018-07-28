@@ -8,13 +8,15 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
-#include <Talon.h>
+#include <ctre/Phoenix.h>
+
+using ctre::phoenix::motorcontrol::can::WPI_TalonSRX;
 
 class FlapSubsystem : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Talon flapMotor;
+	WPI_TalonSRX flapMotor;
 	double speed;
 
 public:

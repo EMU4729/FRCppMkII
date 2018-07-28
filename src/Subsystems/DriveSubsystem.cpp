@@ -52,11 +52,11 @@ void DriveSubsystem::tank(double left, double right) {
 }
 
 void DriveSubsystem::power(double left, double right) {
-//	std::cout << left << ", " << right << std::endl;
-	leftFrontDrive.SetSpeed(-left*speed);
-	rightFrontDrive.SetSpeed(right*speed);
-	leftBackDrive.SetSpeed(-left*speed);
-	rightBackDrive.SetSpeed(right*speed);
+	//std::cout << left << ", " << right << std::endl;
+	leftFrontDrive.Set(-left*speed);
+	rightFrontDrive.Set(right*speed);
+	leftBackDrive.Set(-left*speed);
+	rightBackDrive.Set(right*speed);
 }
 
 double DriveSubsystem::getLeftEncoder() {

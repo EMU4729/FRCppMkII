@@ -8,20 +8,20 @@
 #pragma once
 
 #include <Commands/Subsystem.h>
-#include <Talon.h>
+#include <ctre/Phoenix.h>
 #include <Encoder.h>
 
-using frc::Talon;
+using ctre::phoenix::motorcontrol::can::WPI_TalonSRX;
 using frc::Encoder;
 
 class DriveSubsystem : public frc::Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Talon leftFrontDrive;
-	Talon rightFrontDrive;
-	Talon leftBackDrive;
-	Talon rightBackDrive;
+	WPI_TalonSRX leftFrontDrive;
+	WPI_TalonSRX rightFrontDrive;
+	WPI_TalonSRX leftBackDrive;
+	WPI_TalonSRX rightBackDrive;
 
 	double speed;
 

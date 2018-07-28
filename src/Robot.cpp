@@ -18,7 +18,7 @@ using frc::SendableChooser;
 OI Robot::m_oi;
 DriveSubsystem Robot::driveSubsystem;
 FlapSubsystem Robot::flapsSubsystem;
-LEDSubsystem Robot::ledSubsystem;
+//LEDSubsystem Robot::ledSubsystem;
 WinchSubsystem Robot::winchSubsystem;
 CubeSubsystem Robot::cubeSubsystem;
 GyroSubsystem Robot::gyroSubsystem;
@@ -26,6 +26,7 @@ PneumaticsSubsystem Robot::pneumaticSubsystem;
 TiltSubsystem Robot::tiltSubsystem;
 
 void Robot::RobotInit() {
+	printf("debug robot init\n");
 	m_chooser.AddDefault("Left", "l");
 	m_chooser.AddObject("Middle", "m");
 	m_chooser.AddObject("Right", "r");
