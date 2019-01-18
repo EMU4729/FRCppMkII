@@ -14,7 +14,7 @@ WinchSubsystem::WinchSubsystem() : Subsystem("WinchSubsystem"),
 
 	normalSpeed = 0.7;
 	carrySpeed = 1;
-	upSpeed = 0.5;
+	upSpeed = 0.9;
 	highPower = false;
 }
 

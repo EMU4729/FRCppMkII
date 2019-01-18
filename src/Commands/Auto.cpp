@@ -16,28 +16,29 @@
 
 Auto::Auto(string autoType) : autoType{autoType} {
 	Robot::driveSubsystem.lowSpeed();
-	Robot::driveSubsystem.resetEncoders();
-
-	side = Direction::Left;
-
-	gameData = DriverStation::GetInstance().GetGameSpecificMessage();
-	if (gameData[0] == 'L') {
-		side = Direction::Left;
-	} else if (gameData[0] == 'R') {
-		side = Direction::Right;
-	}
-
-	AddSequential(new PneumaticsGrab());
-	AddSequential(new WinchUp(1)); // TODO: find better value
-	if (autoType == "l") {
-		AddSequential(new AutoPath::Left(side));
-	} else if (autoType == "m") {
-		AddSequential(new AutoPath::Middle());
-	} else if (autoType == "r") {
-		AddSequential(new AutoPath::Right(side));
-	} else {
-		AddSequential(new AutoPath::Middle());
-	}
+	Robot::driveSubsystem.arcade(0.4, 0);
+//	Robot::driveSubsystem.resetEncoders();
+//
+//	side = Direction::Left;
+//
+//	gameData = DriverStation::GetInstance().GetGameSpecificMessage();
+//	if (gameData[0] == 'L') {
+//		side = Direction::Left;
+//	} else if (gameData[0] == 'R') {
+//		side = Direction::Right;
+//	}
+//
+//	AddSequential(new PneumaticsGrab());
+//	AddSequential(new WinchUp(1)); // TODO: find better value
+//	if (autoType == "l") {
+//		AddSequential(new AutoPath::Left(side));
+//	} else if (autoType == "m") {
+//		AddSequential(new AutoPath::Middle());
+//	} else if (autoType == "r") {
+//		AddSequential(new AutoPath::Right(side));
+//	} else {
+//		AddSequential(new AutoPath::Middle());
+//	}
 
 
 	// Add Commands here:

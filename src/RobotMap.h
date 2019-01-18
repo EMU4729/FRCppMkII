@@ -17,7 +17,7 @@ constexpr int leftEncoderB = 1;
 constexpr int rightEncoderA = 2;
 constexpr int rightEncoderB = 3;
 
-constexpr int flapMotorPort = 0;
+constexpr int flapMotorPort = 4;
 
 constexpr int tiltMotorPort = 7;
 

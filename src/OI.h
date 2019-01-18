@@ -18,4 +18,6 @@ private:
 public:
 	OI();
 	frc::Command *defaultDrive = nullptr;
+	frc::Command *winchControl = nullptr;
+//	frc::Command *tiltControl = nullptr;
 };

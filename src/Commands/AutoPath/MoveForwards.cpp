@@ -30,6 +30,7 @@ void MoveForwards::Execute() {
 	Robot::driveSubsystem.arcade(speed, 0);
 }
 
+
 // Make this return true when this Command no longer needs to run execute()
 bool MoveForwards::IsFinished() {
 	if (abs(Robot::driveSubsystem.getLeftEncoder() + Robot::driveSubsystem.getRightEncoder())/2 >= distance) {

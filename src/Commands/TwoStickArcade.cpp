@@ -9,7 +9,7 @@
 #include "../Robot.h"
 #include <iostream>
 
-TwoStickArcade::TwoStickArcade(Joystick *joystick) : joystick{joystick} {
+TwoStickArcade::TwoStickArcade(Joystick *joystick1, Joystick *joystick2) : joystick1{joystick1}, joystick2{joystick2} {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(Robot::chassis.get());
 	Requires(&Robot::driveSubsystem);
@@ -22,7 +22,7 @@ void TwoStickArcade::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TwoStickArcade::Execute() {
-	Robot::driveSubsystem.arcade(joystick->GetY(), joystick->GetTwist());
+	Robot::driveSubsystem.arcade(joystick1->GetY(), joystick2->GetX());
 
 	//Robot::ledSubsystem.arcade(fmin(abs(joystick->GetY()) + abs(joystick->GetTwist()), 1));
 }

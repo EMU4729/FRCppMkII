@@ -86,6 +86,8 @@ void Robot::TeleopInit() {
 		m_autonomousCommand = nullptr;
 	}
 	m_oi.defaultDrive->Start();
+	m_oi.winchControl->Start();
+//	m_oi.tiltControl->Start();
 }
 
 void Robot::TeleopPeriodic() {
